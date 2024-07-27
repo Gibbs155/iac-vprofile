@@ -1,7 +1,7 @@
 name: "VProfile IAC"
 on:
   push:
-    branches:
+    branches: 
       - main
       - stage
     paths:
@@ -19,7 +19,6 @@ env:
   AWS_REGION: us-east-1
   EKS_CLUSTER: k8sgitops-eks
 
-
 jobs:
   terraform:
     name: "apply terraform code changes"
@@ -30,7 +29,7 @@ jobs:
         working-directory: ./terraform
     steps:
       - name: Checkout source code
-        uses: action/checkout@v4
+        uses: actions/checkout@v4
       
       - name: Setup Terraform with specified version on the runner
         uses: hashicorp/setup-terraform@v2
