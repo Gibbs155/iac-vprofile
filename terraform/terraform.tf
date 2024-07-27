@@ -27,12 +27,12 @@ terraform {
   }
 
   backend "s3" {
-    bucket = "gitopsterrastate"
+    bucket = "bucketterraform-test"
     key    = "terraform.tfstate"
-    region = "us-east-2"
+    region = "us-east-1"
   }
 
-  required_version = "~> 1.6.3"
+  required_version = ">= 1.6.3, < 2.0.0"
 }
 ##
 ##
